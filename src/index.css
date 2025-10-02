@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#bg-sunny.active {
+  background: linear-gradient(to top, #fcd34d, #f97316);
+}
+
+#bg-cloudy.active {
+  background: linear-gradient(to top, #cbd5e1, #64748b);
+}
+
+#bg-rain.active {
+  background: linear-gradient(to top, #3b82f6, #0ea5e9);
+}
+
+#bg-snow.active {
+  background: linear-gradient(to top, #e0f2fe, #bae6fd);
+}
+
+.drop, .cloud, .snowflake {
+  position: absolute;
+  pointer-events: none;
+}
+
+.drop {
+  width: 2px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  animation-name: fall;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fall {
+  to { transform: translateY(100vh); }
+}
+
+.cloud {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.snowflake {
+  color: white;
+  animation-name: snowFall;
+  animation-iteration-count: infinite;
+}
+
+@keyframes snowFall {
+  to { transform: translateY(100vh); }
+}
